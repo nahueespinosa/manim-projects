@@ -13,10 +13,10 @@ git clone --recursive https://github.com/nahueespinosa/manim-projects
 
 ## Usage
 
-To see the videos just go to the `media/videos` folder.
+To see the videos check the `media/videos` folder.
 
 If you want to generate these videos on your computer [install Manim](https://github.com/3b1b/manim#installation) and, after cloning
-this repository, run the following command (using Python 3.7).
+this repository, run the following command:
 
 ```
 $ python manim/manim.py 00_signal_parameters.py -pl
