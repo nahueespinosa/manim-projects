@@ -1,0 +1,7 @@
+__pychache__
+*.pyc
+
+# Keep only renderized videos
+media/Tex
+media/texts
+partial_movie_files
