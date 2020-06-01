@@ -1,7 +1,8 @@
 __pychache__
 *.pyc
 
-# Keep only renderized videos
+# Keep only high quality renderized videos
 media/Tex
 media/texts
 partial_movie_files
+480p15
