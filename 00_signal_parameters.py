@@ -82,7 +82,7 @@ class Frequency(Period):
 
             self.play(FadeIn(count_label, run_time=0.1))
 
-        frequency_measurement = TexMobject(f"f = {1000 / PERIOD} Hz")
+        frequency_measurement = TexMobject(f"f = {round(1000 / PERIOD)} Hz")
         frequency_measurement.set_y(self.coords_to_point(0, 1.2)[1], LEFT+DOWN)
 
         self.play(Transform(count_label, frequency_measurement))    
