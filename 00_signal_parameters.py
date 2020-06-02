@@ -58,14 +58,10 @@ class Frequency(Period):
         self.setup_axes(animate=False)
         func_graph = self.get_graph(func_to_graph, self.function_color)
 
-        vert_line = Line(self.coords_to_point(0, -1.5), self.coords_to_point(0, 1.5), color=YELLOW)
+        vert_line = Line(self.coords_to_point(1000, -1.5), self.coords_to_point(1000, 1.5), color=YELLOW)
 
         self.play(ShowCreation(func_graph))
         self.play(ShowCreation(vert_line))
-
-        self.play(
-            ApplyMethod(vert_line.move_to, self.coords_to_point(1000, 0))
-        )
 
         self.wait(1)
 
