@@ -57,7 +57,9 @@ class Period(GraphScene):
         self.play(
             ApplyMethod(vert_line_1.move_to, self.coords_to_point(PERIOD * 2.75, 0)),
             ApplyMethod(vert_line_2.move_to, self.coords_to_point(PERIOD * 3.75, 0)),
-            ApplyMethod(period_measurement.set_x, self.coords_to_point(PERIOD * 2.75, 0)[0], LEFT+UP)
+            ApplyMethod(period_measurement.set_x, self.coords_to_point(PERIOD * 2.75, 0)[0], LEFT+UP),
+            rate_func=there_and_back,
+            run_time=3
         )
 
         self.wait(1)
