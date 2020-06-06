@@ -1,14 +1,30 @@
+"""SignalParameters
+"""
+
 from manimlib.imports import *
 
-# Period in miliseconds
+# Signal period in miliseconds
 PERIOD = 100
 
 
 def func_to_graph(x):
+    """Function to graph
+
+    This is the function we are goint to plot in every example.
+
+    Parameters:
+        x: Input variable.
+
+    Returns:
+        Value of the function.
+    """
     return np.sin(2*math.pi*x/PERIOD)
 
 
 class Period(GraphScene):
+    """Period animation
+    """
+
     CONFIG = {
         "x_min" : 0,
         "x_max" : 5 * PERIOD,
@@ -48,6 +64,9 @@ class Period(GraphScene):
 
 
 class Frequency(Period):
+    """Frequency animation
+    """
+
     CONFIG = {
         "x_max" : 1200,
         "x_labeled_nums" : range(0, 1100, 200),
