@@ -76,15 +76,13 @@ class Frequency(Period):
     }
 
     def construct(self):
-        self.setup_axes(animate=False)
+        self.setup_axes(animate=True)
         func_graph = self.get_graph(func_to_graph, self.function_color)
 
         vert_line = Line(self.coords_to_point(1000, -1.5), self.coords_to_point(1000, 1.5), color=YELLOW)
 
         self.play(ShowCreation(func_graph))
         self.play(ShowCreation(vert_line))
-
-        self.wait(1)
 
         count_label = None
 
