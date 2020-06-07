@@ -46,18 +46,17 @@ class Period(GraphScene):
         vert_line_1 = Line(self.coords_to_point(PERIOD, -1.5), self.coords_to_point(PERIOD, 1.5), color=YELLOW)
         vert_line_2 = Line(self.coords_to_point(PERIOD * 2, -1.5), self.coords_to_point(PERIOD * 2, 1.5), color=YELLOW)
 
-        period_measurement = TexMobject(f"T = {PERIOD} ms")
-        period_measurement.set_x(self.coords_to_point(PERIOD, 1.7)[0], LEFT+DOWN)
-        period_measurement.set_y(self.coords_to_point(PERIOD, 1.7)[1], LEFT+DOWN)
+        time_label = TexMobject(f"T = {PERIOD} ms")
+        time_label.next_to(vert_line_1, RIGHT+UP)
+        time_label.add_updater(lambda d: d.next_to(vert_line_1, RIGHT+UP))
 
         self.play(ShowCreation(func_graph))
         self.play(ShowCreation(vert_line_1), ShowCreation(vert_line_2))
-        self.play(ShowCreation(period_measurement))
+        self.play(ShowCreation(time_label))
 
         self.play(
             ApplyMethod(vert_line_1.move_to, self.coords_to_point(PERIOD * 2.75, 0)),
             ApplyMethod(vert_line_2.move_to, self.coords_to_point(PERIOD * 3.75, 0)),
-            ApplyMethod(period_measurement.set_x, self.coords_to_point(PERIOD * 2.75, 0)[0], LEFT+UP),
             rate_func=there_and_back,
             run_time=3
         )
@@ -97,7 +96,8 @@ class Frequency(Period):
 
             self.play(FadeIn(count_label, run_time=0.1))
 
-        frequency_measurement = TexMobject(f"f = {round(1000 / PERIOD)} Hz")
-        frequency_measurement.set_y(self.coords_to_point(0, 1.2)[1], LEFT+DOWN)
+        freq_label = TexMobject(f"f = {round(1000 / PERIOD)} Hz")
+        freq_label.set_y(self.coords_to_point(0, 1.2)[1], LEFT+DOWN)
 
-        self.play(Transform(count_label, frequency_measurement))    
+        self.play(Transform(count_label, freq_label))
+  
